@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "outDir": "dist",
+  },
+  "include": ["src//*", "src/Airline/Airline.ts", "src/Airline/Emlpoyee.ts", "src/Airline/Aeroplane/Aeroplane.ts"],
+  "exclude": ["node_modules", "/*.spec.ts"]
+}
