@@ -1,5 +1,5 @@
 export class Seat {
-    constructor(private seatId :number){
+    constructor(private seatId :string){
                                         
     }
 }

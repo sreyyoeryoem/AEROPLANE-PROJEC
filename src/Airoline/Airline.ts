@@ -1,8 +1,9 @@
 import { Aeroplane } from "./Aeroplane";
-import { Employee } from "../Human/Employee";
+// import { }
+// import {}
 export class Airline{
     private aeoplanes: Aeroplane[]=[];
-    private employee:Employee []=[];
+    // private employee:Employee []=[];
 
     constructor(private name: string,private code: string){
         this.name = name;

@@ -1,12 +1,13 @@
 import { Seat } from "./seat";
-import { Trip } from "../Flight/Trip";
+import { Trip } from "./Trip";
 export class Booking{
     seat:Seat;
     trip:Trip[]=[];
     constructor(seat:Seat){
-      this.seat = seat;
+        this.seat = seat;
+       
     }
-    addTrip(trip:Trip){
+    addTrip (trip:Trip) {
         this.trip.push(trip);
     }
 }
