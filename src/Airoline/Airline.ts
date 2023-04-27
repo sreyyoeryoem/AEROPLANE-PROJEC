@@ -1,5 +1,5 @@
 import { Aeroplane } from "./Aeroplane";
-import { Employee } from "../Human/Employee";
+// import {}
 export class Airline{
     private aeoplanes: Aeroplane[]=[];
     private employee:Employee []=[];

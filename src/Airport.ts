@@ -1,5 +1,5 @@
 import { Gate } from "./Gate";
-import { Airline } from "./flight/Airline";
+import { }
 export class Airport{
     private gates: Gate[] = [];
     private airline:Airline[]=[];
