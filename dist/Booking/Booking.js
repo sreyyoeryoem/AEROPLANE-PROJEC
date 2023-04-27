@@ -4,6 +4,7 @@ exports.Booking = void 0;
 var Booking = /** @class */ (function () {
     function Booking(seat) {
         this.trip = [];
+        this.seat = seat;
     }
     Booking.prototype.addTrip = function (trip) {
         this.trip.push(trip);

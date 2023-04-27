@@ -5,7 +5,7 @@ var Aeroplane = /** @class */ (function () {
     function Aeroplane(aeroplane_number, type, layout) {
         this.aeroplane_number = aeroplane_number;
         this.type = type;
-        this.employee = [];
+        // private employee: Employee[]=[];
         this.flights = [];
         this.passengers = [];
         this.aeroplane_number = aeroplane_number;

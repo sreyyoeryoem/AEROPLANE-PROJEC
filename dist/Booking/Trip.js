@@ -9,6 +9,9 @@ var Trip = /** @class */ (function () {
         this.departure = departure;
         this.arrival = arrival;
     }
+    Trip.prototype.addFlight = function (flight) {
+        this.flights.push(flight);
+    };
     return Trip;
 }());
 exports.Trip = Trip;

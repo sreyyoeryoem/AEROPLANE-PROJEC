@@ -1,15 +1,30 @@
 "use strict";
 exports.__esModule = true;
-var Passenger_1 = require("./Human/Passenger");
-var Trip_1 = require("./Flight/Trip");
+var Passenger_1 = require("./Booking/Passenger");
+var Flight_1 = require("./Airoline/Flight");
+var Trip_1 = require("./Booking/Trip");
 var seat_1 = require("./Booking/seat");
 var Booking_1 = require("./Booking/Booking");
-var sreyyoer = new Passenger_1.Passenger("sreyyoer", "Yoem", 19, 0976388651);
-var thana = new Passenger_1.Passenger("thana", "choun", 19, 0976388651);
-var singdav = new Passenger_1.Passenger("singdav", "Thoun", 19, 0976388651);
-var tripsreyyoer = new Trip_1.Trip("Cambodia", "UK");
+var sreyyoer = new Passenger_1.Passenger("sreyyoer", "Yoem", 19, 976388651);
+var thana = new Passenger_1.Passenger("thana", "choun", 19, 976388651);
+// let singdav = new Passenger ("singdav","Thoun",19,0976388651);
+var start = new Date("December 17, 2022  16:00:00");
+var flight1 = new Flight_1.Flight("AP43", "Cabodiar", "singapor", start);
+var flight2 = new Flight_1.Flight("AP43", "Cabodiar", "singapor", start);
+var flight3 = new Flight_1.Flight("AP43", "Cabodiar", "singapor", start);
+var tripsreyyoer1 = new Trip_1.Trip("Cambodia", "UK");
+var tripsreyyoer2 = new Trip_1.Trip("UK", "Cambodia");
 var tripThana = new Trip_1.Trip("Cambodia", "USA");
+tripsreyyoer1.addFlight(flight1);
+tripsreyyoer1.addFlight(flight2);
+tripsreyyoer1.addFlight(flight3);
 var seatA1 = new seat_1.Seat("A01");
+var seatA2 = new seat_1.Seat("A02");
 var sreyyoerBooking = new Booking_1.Booking(seatA1);
-// sreyyoer.
-console.log(sreyyoer);
+var thanaBooking = new Booking_1.Booking(seatA2);
+sreyyoerBooking.addTrip(tripsreyyoer1);
+thanaBooking.addTrip(tripThana);
+// sreyyoerBooking.addTrip(tripsreyyoer2)
+sreyyoer.addBooking(sreyyoerBooking);
+thana.addBooking(thanaBooking);
+console.log(sreyyoer.bookings[0].trip[0]);

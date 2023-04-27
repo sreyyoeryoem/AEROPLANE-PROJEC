@@ -13,6 +13,9 @@ var Passenger = /** @class */ (function () {
         this.age = age;
         this.phoneNumber = phoneNumber;
     }
+    Passenger.prototype.addBooking = function (booking) {
+        this.bookings.push(booking);
+    };
     return Passenger;
 }());
 exports.Passenger = Passenger;
