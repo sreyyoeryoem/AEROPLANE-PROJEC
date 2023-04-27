@@ -3,8 +3,11 @@ import { Trip } from "../Flight/Trip";
 export class Booking{
     seat:Seat;
     trip:Trip[]=[];
-    constructor(private Departure: string,private Arrival: string,seat:Seat){
-        this.Departure = Departure;
-        this.Arrival = Arrival;
+    constructor(seat:Seat){
+      this.seat = seat;
+    }
+    addTrip(trip:Trip){
+        this.trip.push(trip);
     }
 }
+
