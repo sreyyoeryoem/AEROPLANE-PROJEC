@@ -1,10 +1,11 @@
-import { Employee } from "../Human/Employee";
+
 import { Flight } from "./Flight";
 import { Layout } from "../Booking/Layout";
-import { Passenger } from "../Human/Passenger";
+import { Passenger } from "../Booking/Passenger";
+
 
 export class Aeroplane{
-    private employee: Employee[]=[];
+    // private employee: Employee[]=[];
     private flights:Flight[]=[];
     private layout:Layout; 
     private passengers:Passenger[]=[]; 

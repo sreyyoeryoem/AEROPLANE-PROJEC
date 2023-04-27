@@ -1,5 +1,5 @@
 import { Seat } from "./seat";
-import { Trip } from "../Human/Trip";
+import { Trip } from "./Trip";
 export class Booking{
     seat:Seat;
     trip:Trip[]=[];

@@ -1,14 +1,8 @@
-// import {Passenger}from './Human/Passenger';
+import { Passenger } from './Booking/Passenger';
 import { Airport } from './Airport';
-// import { Airline } from './flight/Airline';
-// import { Aeroplane } from './flight/Aeroplane';
-// import { Employee } from './Human/Employee';
-// import { Flight } from './flight/Flight';
+import { Flight } from './Airoline/Flight';
 import { Gate } from './Gate';
-// import { Trip } from './Human/Trip';
-
-// import { Gender } from './Human/Gender';
-import { Layout } from './Booking/Layout';
+import { Trip } from './Booking/Trip';
 import { Seat } from './Booking/seat';
 import { Booking } from './Booking/Booking';
 

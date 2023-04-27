@@ -1,5 +1,5 @@
-import { Route} from './route';
-import { Meal} from './meal';
+import { Route } from './Route';
+import { Meal } from './Meal';
 export class Flight{
     private route:Route;
     private Meals:Meal[]=[];

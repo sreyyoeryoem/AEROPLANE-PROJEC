@@ -1,4 +1,4 @@
-import { Flight } from "../flight/Flight";
+import { Flight } from "../Airoline/Flight";
 export class Trip{
     private flights:Flight[]=[];
     constructor(private departure:string,private arrival:string){
