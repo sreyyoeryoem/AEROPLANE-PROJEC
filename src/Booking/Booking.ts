@@ -4,8 +4,7 @@ export class Booking{
     seat:Seat;
     trip:Trip[]=[];
     constructor(seat:Seat){
-        this.seat = seat;
-       
+        this.seat = seat;   
     }
     addTrip (trip:Trip) {
         this.trip.push(trip);

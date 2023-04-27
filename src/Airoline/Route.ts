@@ -1,5 +1,5 @@
 export class Route {
-                    constructor(private name:string){
-                                        
-                    }
+    constructor(private name:string){
+                                              
+    }
 }
