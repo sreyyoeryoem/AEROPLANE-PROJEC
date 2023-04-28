@@ -18,4 +18,5 @@ export class Airport{
     addRoute(route: Route){
         this.route.push(route);
     }
+    
 }

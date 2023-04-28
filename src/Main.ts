@@ -6,6 +6,9 @@ import { Trip } from './Booking/Trip';
 import { Seat } from './Booking/seat';
 import { Booking } from './Booking/Booking';
 import { Airline } from './Airoline/Airline';
+import { Route } from './Airoline/Route';
+import { Bag } from './Booking/Bag';
+
 let airport = new Airport("A3P89")
 let gate1 = new Gate ("A01")
 let gate2 = new Gate ("A02")
@@ -41,7 +44,9 @@ let thanaBooking = new Booking (seatA2);
 
 let gates1 = new Gate ('thana');
 let gates2 = new Gate ('sreyyoer');
+let route = new Route ('Straight road');
 
+airport.addRoute(route);
 airport.addGate(gates1);
 airport.addGate(gates2);
 
