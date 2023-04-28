@@ -4,4 +4,7 @@ export class Layout {
                     constructor(private row:string, colunm :string){
 
                     }
+                    addSeate(seat:Seat){
+                                        this.seats.push(seat);
+                    }
 }

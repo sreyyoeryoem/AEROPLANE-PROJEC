@@ -5,6 +5,18 @@ import { Gate } from './Gate';
 import { Trip } from './Booking/Trip';
 import { Seat } from './Booking/seat';
 import { Booking } from './Booking/Booking';
+import { Airline } from './Airoline/Airline';
+let airport = new Airport("A3P89")
+let gate1 = new Gate ("A01")
+let gate2 = new Gate ("A02")
+airport.addGate(gate1)
+airport.addGate(gate2)
+
+let airlineCompany1 = new Airline ("UKairline","A1111");
+let airlineCompany2 = new Airline ("USAairline","A222");
+airport.addAirline(airlineCompany1)
+airport.addAirline(airlineCompany2)
+
 
 let sreyyoer = new Passenger ("sreyyoer","Yoem",19,976388651);
 let thana = new Passenger ("thana","choun",19,976388651);
@@ -36,4 +48,4 @@ thanaBooking.addTrip(tripThana)
 sreyyoer.addBooking(sreyyoerBooking)
 thana.addBooking(thanaBooking)
 
-console.log(sreyyoer.bookings[0].trip[0])
+console.log(airport)

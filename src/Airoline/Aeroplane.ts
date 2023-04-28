@@ -12,4 +12,10 @@ export class Aeroplane{
     constructor(private aeroplane_number:number,private type:string,layout:Layout){
         this.aeroplane_number = aeroplane_number;
     }
+    addFlight(flight:Flight){
+        this.flights.push(flight)
+    }
+    addpassenger(passenger:Passenger){
+        this.passengers.push(passenger)
+    }
 }
