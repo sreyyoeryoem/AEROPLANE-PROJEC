@@ -23,4 +23,10 @@ export class Aeroplane{
     addPassenger(passengers:Passenger){
         this.passengers.push(passengers);
     }
+    addFlight(flight:Flight){
+        this.flights.push(flight)
+    }
+    addpassenger(passenger:Passenger){
+        this.passengers.push(passenger)
+    }
 }
