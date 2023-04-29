@@ -7,23 +7,19 @@ export class Airline{
         this.name = name;
         this.code = code;
     }
-    addAeroplan(aeroplane:Aeroplane){
+    addAeroplan(aeroplane:Aeroplan){
         this.aeroplanes.push(aeroplane)
     }
     addEmployee(employee:Employee){
         this.employees.push(employee)
     }
-    // getEmployees(){
-    //     return this.employees;
-    // }
+    getEmployees(){
+        return this.employees;
+    }
     getAllAeroplanes(){
         return this.aeroplanes
     }
-    getMealFromFlights(){
-        for(let fligh of this.aeroplanes){
-            // console.log(fligh)
-        }
-    }
+   
 
     getSalaryOfEmployees():number{
         let resultSalary = 0;

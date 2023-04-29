@@ -15,6 +15,7 @@ import { Daggage_handler } from './Airoline/Employee/Daggage_handler';
 import { Gender } from './Airoline/Employee/Gender';
 
 import { Meal } from './Airoline/Meal';
+import { Bag } from './Booking/Bag';
 
 
 
@@ -24,24 +25,34 @@ let seatA1 = new Seat ("A01")
 let seatA2 = new Seat ("A02")
 let seatA3 = new Seat ("A03")
 
+let sreyyeorbag1 = new Bag ("A01") 
+let sreyyeorbag2 = new Bag ("A02") 
+let thanabag1 = new Bag ("B01") 
+let singdavbag1 = new Bag ("B01") 
+
 let sreyyoer = new Passenger ("sreyyoer","Yoem",19,976388651);
 let thana = new Passenger ("thana","choun",19,976388651);
 let singdav = new Passenger ("singdav","Thoun",19,976388651);
 
+sreyyoer.addBag(sreyyeorbag1)
+sreyyoer.addBag(sreyyeorbag2)
+thana.addBag(thanabag1)
+singdav.addBag(singdavbag1)
 
 let start = new Date("December 6, 2022 3:00:00");
 
 let sreyyoertripTo = new Trip ("Cambodia","UK");
 
 
-let flight1 = new Flight ("AP43","Cabodiar","singapor",start,Meal.DAIRY_FREE)
-let flight2 = new Flight ("AP43","singapr","Uk",start,Meal.FORTH)
+let flight1 = new Flight ("AP43","Cabodiar","singapor",start)
 
-let flight3 = new Flight ("AP43","Cabodiar","singapor",start,Meal.DAIRY_FREE)
-let flight4 = new Flight ("AP43","singapr","USA",start,Meal.FORTH)
+let flight2 = new Flight ("AP43","singapr","Uk",start)
 
-let flight5 = new Flight ("AP43","Cabodiar","singapor",start,Meal.DAIRY_FREE)
-let flight6 = new Flight ("AP43","singapr","France",start,Meal.FORTH)
+let flight3 = new Flight ("AP43","Cabodiar","singapor",start)
+let flight4 = new Flight ("AP43","singapr","USA",start)
+
+let flight5 = new Flight ("AP43","Cabodiar","singapor",start)
+let flight6 = new Flight ("AP43","singapr","France",start)
 
 
 let sreyyoertripFrom = new Trip ("UK","Cambodia");
@@ -131,6 +142,12 @@ airport.getFlightsPassenger("A1")
 // User2 As an airline manager, I want to know for a given flight, how many passengers have return tickets.
 airport.getPassengersReturnTicket()
 //User3 As an airline pilot, I want to know, for a given date, how many flights I have to join.
+
+//User4 As an airline chef, I need to know, for a given flight, how many of each meal type I need to prepare
+aeroplane1.getMealFromFlights("AP43")
+
 //User5 As an airline manager, I want to find out how much salary I pay all my employees
 airlineCompany1.getSalaryOfEmployees()
-console.log(airport.getFlightsPassenger("A1"))
+// User 6 As a passenger, I want to know which gate my plane is waiting at.
+
+console.log()

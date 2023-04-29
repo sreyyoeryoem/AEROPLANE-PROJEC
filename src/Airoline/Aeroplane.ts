@@ -3,8 +3,8 @@ import { Flight } from "./Flight";
 import { Layout } from "../Booking/Layout";
 import { Passenger } from "../Booking/Passenger";
 import { Employee } from "./Employee/Employee";
+import { Meal } from "./Meal";
 
-<<<<<<< HEAD
 export class Aeroplan{
     private employee: Pilot[]=[];
     private flights:Flight[]=[];
@@ -17,26 +17,6 @@ export class Aeroplan{
     }
     addpassenger(passenger:Passenger){
         this.passengers.push(passenger);
-=======
-export class Aeroplane{
-    private employee: Employee[]=[];
-    private flights:Flight[]=[];
-    private layout:Layout; 
-    private passengers:Passenger[]=[]; 
-    constructor(private aeroplane_number:number,private type:string,layout:Layout){
-        this.aeroplane_number = aeroplane_number;
-        this.type = type;
-        this.layout = layout;
-    }
-    addEmployee(employee:Employee){
-        this.employee.push(employee);
-    }
-    addFlights(flights:Flight){
-        this.flights.push(flights);
-    }
-    addPassenger(passengers:Passenger){
-        this.passengers.push(passengers);
->>>>>>> 1003fec0185a2e9e6f3b34e54c10cb7723f1d931
     }
     addFlight(flight:Flight){
         this.flights.push(flight)
@@ -46,6 +26,16 @@ export class Aeroplane{
     }
     getflight(){
         return this.flights;
+    }
+    getMealFromFlights(flightNumber:string):Meal{
+      
+        for(let flight of this.flights){
+            if(flightNumber === flight["flight_number"] ){
+                console.log(flight["meal"])
+                return flight["meal"];
+            }
+            
+        }
     }
     
   
