@@ -9,5 +9,6 @@ export class Booking{
     addTrip (trip:Trip) {
         this.trip.push(trip);
     }
+
 }
 
