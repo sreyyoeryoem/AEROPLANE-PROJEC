@@ -27,7 +27,6 @@ export class Airline{
 
     getSalaryOfEmployees():number{
         let resultSalary = 0;
-
         for( let employee of this.employees){
             resultSalary += employee.salary
         }
