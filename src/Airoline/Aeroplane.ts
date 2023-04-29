@@ -27,6 +27,7 @@ export class Aeroplan{
     getflight(){
         return this.flights;
     }
+ 
     getFlightOfpassenger(){
         let flightofpassenger = [];
         for(let passenger of this.passengers){
@@ -43,12 +44,10 @@ export class Aeroplan{
     }
     getMealFromFlights(fligh:Flight){
       let resultMeals = [];
-      let flightofpassenger = [];
         for(let passenger of this.passengers){
             for(let booking of passenger.getBooking()){
                 for(let trip of booking.getTripTo()){
                     for (let flight of trip.getFlight()){
-                        flightofpassenger.push(flight);
                        if(fligh["flight_number"] == flight["flight_number"]){        
                             resultMeals.push(booking.meal);                          
                        }
@@ -60,3 +59,7 @@ export class Aeroplan{
     }
 }
 
+
+    getGateNumber(){
+        let 
+    }

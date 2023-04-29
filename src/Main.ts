@@ -13,12 +13,8 @@ import { Attendant } from './Airoline/Employee/Attendant';
 import { Chef } from './Airoline/Employee/chef';
 import { Daggage_handler } from './Airoline/Employee/Daggage_handler';
 import { Gender } from './Airoline/Employee/Gender';
-
 import { Meal } from './Airoline/Meal';
 import { Bag } from './Booking/Bag';
-
-
-
 
 
 let seatA1 = new Seat ("A01")
@@ -40,17 +36,13 @@ thana.addBag(thanabag1)
 singdav.addBag(singdavbag1)
 
 let start = new Date("December 6, 2022 3:00:00");
-
 let sreyyoertripTo = new Trip ("Cambodia","UK");
 
 
-let flight1 = new Flight ("AP43","Cabodiar","singapor",start)
-
+let flight1 = new Flight ("AP43","Cabodiar","singapor",start, gate1)
 let flight2 = new Flight ("AP44","singapr","Uk",start)
-
 let flight3 = new Flight ("AP45","Cabodiar","singapor",start)
 let flight4 = new Flight ("AP46","singapr","USA",start)
-
 let flight5 = new Flight ("AP47","Cabodiar","singapor",start)
 let flight6 = new Flight ("AP48","singapr","France",start)
 
@@ -151,3 +143,4 @@ airlineCompany1.getSalaryOfEmployees()
 // User 6 As a passenger, I want to know which gate my plane is waiting at.
 
 console.log(aeroplane1.getMealFromFlights(flight1))
+
