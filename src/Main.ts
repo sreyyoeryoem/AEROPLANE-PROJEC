@@ -35,9 +35,9 @@ sreyyoer.addBag(sreyyeorbag2)
 thana.addBag(thanabag1)
 singdav.addBag(singdavbag1)
 
-let date1 = new Date("12","01","2021","12:30:00");
-let date2 = new Date("12","01","2021","12:30:00");
-let date3 = new Date("13","01","2021","12:30:00");
+let date1 = new Date(2023,2,12,"12:30:00");
+let date2 = new Date(2023,1,12,"12:30:00");
+let date3 = new Date(2023,1,12,"12:30:00");
 
 let sreyyoertripTo = new Trip ("Cambodia","UK");
 let gate1 = new Gate('A01');
@@ -45,10 +45,10 @@ let gate2 = new Gate('A02');
 
 
 let flight1 = new Flight ("AP43","Cabodiar","singapor",date1,gate1);
-let flight2 = new Flight ("AP44","singapr","Uk",date2,gate1);
+let flight2 = new Flight ("AP44","singapr","Uk",date2,gate2);
 let flight3 = new Flight ("AP45","Cabodiar","singapor",date3,gate1);
 let flight4 = new Flight ("AP46","singapr","USA",date3,gate2);
-let flight5 = new Flight ("AP47","Cabodiar","singapor",date3,gate2);
+let flight5 = new Flight ("AP47","Cabodiar","singapor",date3,gate1);
 let flight6 = new Flight ("AP48","singapr","France",date3,gate2);
 
 
@@ -112,7 +112,7 @@ airlineCompany1.addAeroplan(aeroplane2)
 
 aeroplane1.addFlight(flight1)
 aeroplane1.addFlight(flight2)
-// aeroplane1.addFlight(flight2)
+aeroplane1.addFlight(flight3)
 
 aeroplane1.addpassenger(sreyyoer);
 aeroplane1.addpassenger(thana);
@@ -141,15 +141,13 @@ airlineCompany1.addEmployee(attendant)
 airport.getFlightsPassenger("A1")
 // User2 As an airline manager, I want to know for a given flight, how many passengers have return tickets.
 airport.getPassengersReturnTicket()
-//User3 As an airline pilot, I want to know, for a given date, how many flights I have to join.
-// 
+//User3 As an airline pilot, I want to know, for a given date, how many flights I have to join. 
+airlineCompany1.getFlights(pilot1,date2)
 //User4 As an airline chef, I need to know, for a given flight, how many of each meal type I need to prepare
 aeroplane1.getMealFromFlights(flight1)
 //User5 As an airline manager, I want to find out how much salary I pay all my employees
 airlineCompany1.getSalaryOfEmployees()
 // User 6 As a passenger, I want to know which gate my plane is waiting at.
-thana.getGateNumber('A01',date1);
+sreyyoer.getGateNumber('AP43',date1);
 
-console.log(aeroplane1.getMealFromFlights(flight1))
-
-// console.log()
+console.log(sreyyoer.getGateNumber('AP44',date2))

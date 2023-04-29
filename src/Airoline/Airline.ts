@@ -29,6 +29,24 @@ export class Airline{
             resultSalary += employee.salary
         }
         return resultSalary
+
+    }
+    getFlights(pilotfrome:Pilot,date:Date){
+        let countOfFlights = 0 ;
+        for(let aeroplan of this.aeroplanes){
+            // console.log(aeroplan)
+            for(let pilot of aeroplan.getpilot()){
+                if(pilot["name"] == pilotfrome["name"]){
+                    for(let flight of aeroplan["flights"]){
+                        if(flight["date"].isEqual(date)){
+                            countOfFlights += 1;
+                        }
+                    }
+                }
+
+            }
+        }
+        return countOfFlights
     }
    
 }

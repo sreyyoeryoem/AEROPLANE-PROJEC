@@ -20,15 +20,16 @@ export class Passenger{
     addBag(bags:Bag){
         this.bags.push(bags);
     }
-    getGateNumber(flightNumber:string,date:Date){
-        let getGate = [];
+    getGateNumber(flightNumber:string,date:Date):string{
         for(let booking of  this.bookings){
             for(let trip of booking.getTripTo()){
                 for(let flight of trip.getFlight()){
-                    console.log(flight);             
+                    if(flight['flight_number'] == flightNumber && flight["date"].isEqual(date)){
+                        // return flight["gates"]
+                        return(flight["gates"]["name"])
+                    }            
                 }
             }
         }
     }
-    
 }
