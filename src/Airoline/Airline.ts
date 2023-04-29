@@ -1,5 +1,7 @@
 import { Aeroplan } from "./Aeroplane";
 import { Employee } from "./Employee/Employee";
+import { Pilot } from "./Employee/Pilot";
+import { Date } from "./Date";
 export class Airline{
     private aeroplanes: Aeroplan[]=[];
     private employees:Employee []=[];
@@ -27,6 +29,6 @@ export class Airline{
             resultSalary += employee.salary
         }
         return resultSalary
-
     }
+   
 }

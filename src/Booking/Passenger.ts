@@ -1,5 +1,6 @@
 import { Booking} from "../Booking/Booking"
 import { Bag } from "./Bag";
+import { Date } from "../Airoline/Date";
 export class Passenger{
     bookings: Booking[] =[];
     bags:Bag [] = [];
@@ -18,6 +19,16 @@ export class Passenger{
 
     addBag(bags:Bag){
         this.bags.push(bags);
+    }
+    getGateNumber(flightNumber:string,date:Date){
+        let getGate = [];
+        for(let booking of  this.bookings){
+            for(let trip of booking.getTripTo()){
+                for(let flight of trip.getFlight()){
+                    console.log(flight);             
+                }
+            }
+        }
     }
     
 }

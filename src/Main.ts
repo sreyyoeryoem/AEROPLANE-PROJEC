@@ -15,7 +15,7 @@ import { Daggage_handler } from './Airoline/Employee/Daggage_handler';
 import { Gender } from './Airoline/Employee/Gender';
 import { Meal } from './Airoline/Meal';
 import { Bag } from './Booking/Bag';
-
+import { Date } from './Airoline/Date';
 
 let seatA1 = new Seat ("A01")
 let seatA2 = new Seat ("A02")
@@ -35,16 +35,21 @@ sreyyoer.addBag(sreyyeorbag2)
 thana.addBag(thanabag1)
 singdav.addBag(singdavbag1)
 
-let start = new Date("December 6, 2022 3:00:00");
+let date1 = new Date("12","01","2021","12:30:00");
+let date2 = new Date("12","01","2021","12:30:00");
+let date3 = new Date("13","01","2021","12:30:00");
+
 let sreyyoertripTo = new Trip ("Cambodia","UK");
+let gate1 = new Gate('A01');
+let gate2 = new Gate('A02');
 
 
-let flight1 = new Flight ("AP43","Cabodiar","singapor",start, gate1)
-let flight2 = new Flight ("AP44","singapr","Uk",start)
-let flight3 = new Flight ("AP45","Cabodiar","singapor",start)
-let flight4 = new Flight ("AP46","singapr","USA",start)
-let flight5 = new Flight ("AP47","Cabodiar","singapor",start)
-let flight6 = new Flight ("AP48","singapr","France",start)
+let flight1 = new Flight ("AP43","Cabodiar","singapor",date1,gate1);
+let flight2 = new Flight ("AP44","singapr","Uk",date2,gate1);
+let flight3 = new Flight ("AP45","Cabodiar","singapor",date3,gate1);
+let flight4 = new Flight ("AP46","singapr","USA",date3,gate2);
+let flight5 = new Flight ("AP47","Cabodiar","singapor",date3,gate2);
+let flight6 = new Flight ("AP48","singapr","France",date3,gate2);
 
 
 let sreyyoertripFrom = new Trip ("UK","Cambodia");
@@ -65,9 +70,9 @@ singdavTripTo.addFlight(flight6);
 
 // =============booking ========================================================
 
-let sreyyoerBooking = new Booking ("A1",sreyyoer,Meal.DAIRY_FREE,seatA1,sreyyoertripFrom)
-let thanaBooking = new Booking ("A2",thana,Meal.HALAL,seatA2)
-let singdavBooking = new Booking ("A3",singdav,Meal.VEGETARIAN,seatA3)
+let sreyyoerBooking = new Booking ("A1",sreyyoer,Meal.DAIRY_FREE,seatA1,date1,sreyyoertripFrom)
+let thanaBooking = new Booking ("A2",thana,Meal.HALAL,seatA2,date1)
+let singdavBooking = new Booking ("A3",singdav,Meal.VEGETARIAN,seatA3,date2)
 
 
 sreyyoerBooking.addTripTo(sreyyoertripTo);
@@ -82,8 +87,6 @@ singdav.addBooking(singdavBooking)
 
 // ======================================Airport=================
 let airport = new Airport("A3P89")
-let gate1 = new Gate ("A01")
-let gate2 = new Gate ("A02")
 
 airport.addGate(gate1)
 airport.addGate(gate2)
@@ -117,10 +120,15 @@ aeroplane1.addpassenger(singdav);
 
 // =======================Employee=======================================
 
+
 let pilot1 = new Pilot("kaven",32,"20/10/1033",200,Gender.male)
+let pilot2 = new Pilot("sasa",32,"20/10/1033",200,Gender.male)
 let chef1 = new Chef("sreykav",25,"20/10/199",400,Gender.famale)
 let daggage_handler = new Daggage_handler("papa",32,"20/10/1033",700,Gender.male)
 let attendant = new Attendant("yaya",32,"20/10/1033",400,Gender.famale)
+
+
+aeroplane1.addpilot(pilot1)
 airlineCompany1.addEmployee(pilot1)
 airlineCompany1.addEmployee(chef1)
 airlineCompany1.addEmployee(daggage_handler)
@@ -134,13 +142,14 @@ airport.getFlightsPassenger("A1")
 // User2 As an airline manager, I want to know for a given flight, how many passengers have return tickets.
 airport.getPassengersReturnTicket()
 //User3 As an airline pilot, I want to know, for a given date, how many flights I have to join.
-
+// 
 //User4 As an airline chef, I need to know, for a given flight, how many of each meal type I need to prepare
 aeroplane1.getMealFromFlights(flight1)
-
 //User5 As an airline manager, I want to find out how much salary I pay all my employees
 airlineCompany1.getSalaryOfEmployees()
 // User 6 As a passenger, I want to know which gate my plane is waiting at.
+thana.getGateNumber('A01',date1);
 
 console.log(aeroplane1.getMealFromFlights(flight1))
 
+// console.log()

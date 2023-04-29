@@ -2,11 +2,8 @@ import { Pilot } from "./Employee/Pilot";
 import { Flight } from "./Flight";
 import { Layout } from "../Booking/Layout";
 import { Passenger } from "../Booking/Passenger";
-import { Employee } from "./Employee/Employee";
-import { Meal } from "./Meal";
-
 export class Aeroplan{
-    private employee: Pilot[]=[];
+    private pilots: Pilot[]=[];
     private flights:Flight[]=[];
     private layout:Layout; 
     private passengers: Passenger[]=[];
@@ -28,6 +25,12 @@ export class Aeroplan{
         return this.flights;
     }
  
+    addpilot(pilot:Pilot){
+        this.pilots.push(pilot);
+    }
+    getpilot(){
+        return this.pilots;
+    }
     getFlightOfpassenger(){
         let flightofpassenger = [];
         for(let passenger of this.passengers){
@@ -43,23 +46,20 @@ export class Aeroplan{
 
     }
     getMealFromFlights(fligh:Flight){
-      let resultMeals = [];
-        for(let passenger of this.passengers){
-            for(let booking of passenger.getBooking()){
-                for(let trip of booking.getTripTo()){
-                    for (let flight of trip.getFlight()){
-                       if(fligh["flight_number"] == flight["flight_number"]){        
-                            resultMeals.push(booking.meal);                          
-                       }
-                    }
-                }
-            }
-        }
-        return resultMeals
-    }
+        let resultMeals = [];
+          for(let passenger of this.passengers){
+              for(let booking of passenger.getBooking()){
+                  for(let trip of booking.getTripTo()){
+                      for (let flight of trip.getFlight()){
+                         if(fligh["flight_number"] == flight["flight_number"]){  
+                              resultMeals.push(booking.meal);                          
+                         }
+                      }
+                  }
+              }
+          }
+          return resultMeals
+      }
+      
 }
 
-
-    getGateNumber(){
-        let 
-    }

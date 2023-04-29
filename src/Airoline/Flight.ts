@@ -1,5 +1,6 @@
 import { Route } from './Route';
-import { Passenger } from '../Booking/Passenger';
+import { Date } from './Date';
+import { Gate } from '../Gate';
 export class Flight{
     private route:Route;
     constructor(private flight_number: string,private departure:string,private arrival:string,private date:Date, private gates:Gate){
@@ -8,8 +9,4 @@ export class Flight{
         this.date = date;
         this.gates = gates;
     }
-
-    // addMeal(meal:Meal){
-    //     this.Meals.push(meal);
-    // }
 }
