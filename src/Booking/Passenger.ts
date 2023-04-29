@@ -12,6 +12,9 @@ export class Passenger{
     addBooking(booking:Booking){
         this.bookings.push(booking);
     }
+    getBooking(){
+        return this.bookings
+    }
 
     addBag(bags:Bag){
         this.bags.push(bags);
