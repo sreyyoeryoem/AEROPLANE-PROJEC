@@ -1,5 +1,7 @@
 import { Aeroplan } from "./Aeroplane";
 import { Employee } from "./Employee/Employee";
+import { Pilot } from "./Employee/Pilot";
+import { Date } from "./Date";
 export class Airline{
     private aeroplanes: Aeroplan[]=[];
     private employees:Employee []=[];
@@ -28,5 +30,12 @@ export class Airline{
         }
         return resultSalary
 
+    }
+    getFlights(pilot:Pilot,date:Date){
+        for(let aeroplan of this.aeroplanes){
+            // if(pilot["name"] == aeroplan )
+            
+            console.log(aeroplan["pilots"][0]["name"])
+        }
     }
 }

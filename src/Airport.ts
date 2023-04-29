@@ -51,8 +51,9 @@ export class Airport{
             for(let aeroplan of airline.getAllAeroplanes()){
                 for (let passenger of aeroplan.getAllPassengers()){       
                     for(let booking of passenger.getBooking()){
-                        if(booking.tripFrom === undefined){
+                        if(!booking.tripFrom === undefined){
                             passengerRetounTicket.push(passenger)
+                            
                         }
                     }
                 } 
