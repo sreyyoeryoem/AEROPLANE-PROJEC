@@ -31,10 +31,33 @@ export class Airline{
         return resultSalary
 
     }
-    getFlights(pilotfrome:Pilot,date:Date){
+    getPassengersReturnTicket(flight_number:string):number{
+        let passengerReturnTicket = 0;
+        for(let aeroplan of this.getAllAeroplanes()){
+            for (let passenger of aeroplan.getAllPassengers()){
+                for(let booking of passenger.getBooking()){
+                    for(let trip of booking.getTripTo()){
+                            for (let flight of trip.getFlight()){
+                               if(flight["flight_number"] == flight_number){  
+                                    if(booking.tripFrom != undefined){ 
+                                        passengerReturnTicket += 1;
+                                    }                      
+                               }
+                            }
+                    }
+                }
+            }
+            
+        }
+        return passengerReturnTicket
+           
+          
+    }
+    
+    
+    getFlights(pilotfrome:Pilot,date:Date):number{
         let countOfFlights = 0 ;
         for(let aeroplan of this.aeroplanes){
-            // console.log(aeroplan)
             for(let pilot of aeroplan.getpilot()){
                 if(pilot["name"] == pilotfrome["name"]){
                     for(let flight of aeroplan["flights"]){

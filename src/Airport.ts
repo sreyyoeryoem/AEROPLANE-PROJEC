@@ -23,43 +23,23 @@ export class Airport{
     getBooking(){
         return this.bookings;
     }
-    // check reference Number booking----------------------------------------------------------------
+    
     getFlightsPassenger(numberCheck: string){
         let result = [];
         let flightofpassenger = [];
         for(let booking of this.getBooking()){
             if((booking.idBooking) === numberCheck){
                 result.push(booking.passenger)
-            }
-            for(let trip of booking.getTripTo()){
-                for(let fligh of trip.getFlight()){
-                    flightofpassenger.push(fligh)
-                }
-            }
-            result.push(flightofpassenger)
-            return result
-        }
-
-    }
-
-    // get passenger return ticket----------------------------------------------------------------
-
-    getPassengersReturnTicket(){
-        let passengerRetounTicket = [];
-        for(let airline of this.getAllAirlines()){
-            for(let aeroplan of airline.getAllAeroplanes()){
-                for (let passenger of aeroplan.getAllPassengers()){       
-                    for(let booking of passenger.getBooking()){
-                        if(!booking.tripFrom === undefined){
-                            passengerRetounTicket.push(passenger)
-                            
-                        }
+                for(let trip of booking.getTripTo()){
+                    for(let fligh of trip.getFlight()){
+                        flightofpassenger.push(fligh)
                     }
-                } 
+                }
+                result.push(flightofpassenger)
             }
-            return passengerRetounTicket;
         }
-    }
+        return result
+    } 
 }
 
 
