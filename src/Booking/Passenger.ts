@@ -12,4 +12,7 @@ export class Passenger{
     addBooking(booking:Booking){
         this.bookings.push(booking);
     }
+    getBooking(){
+        return this.bookings
+    }
 }

@@ -1,21 +1,31 @@
-
+import { Pilot } from "./Employee/Pilot";
 import { Flight } from "./Flight";
 import { Layout } from "../Booking/Layout";
 import { Passenger } from "../Booking/Passenger";
 
 
 export class Aeroplane{
-    // private employee: Employee[]=[];
+    private employee: Pilot[]=[];
     private flights:Flight[]=[];
     private layout:Layout; 
-    private passengers:Passenger[]=[]; 
-    constructor(private aeroplane_number:number,private type:string,layout:Layout){
-        this.aeroplane_number = aeroplane_number;
+    private passengers: Passenger[]=[];
+
+    constructor(private registration_number:string,private type:string,layout:Layout){
+        this.registration_number = registration_number;
+        this.layout = layout;
+    }
+    addpassenger(passenger:Passenger){
+        this.passengers.push(passenger);
     }
     addFlight(flight:Flight){
         this.flights.push(flight)
     }
-    addpassenger(passenger:Passenger){
-        this.passengers.push(passenger)
+    getAllPassengers(){
+        return this.passengers;
     }
+    getflight(){
+        return this.flights;
+    }
+    
+  
 }

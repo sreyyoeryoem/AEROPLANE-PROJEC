@@ -8,4 +8,7 @@ export class Trip{
     addFlight(flight:Flight){
         this.flights.push(flight);
     }
+    getFlight(){
+        return this.flights
+    }
 }

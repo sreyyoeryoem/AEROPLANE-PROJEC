@@ -1,13 +1,26 @@
 import { Seat } from "./seat";
 import { Trip } from "./Trip";
+import { Passenger } from "./Passenger";
 export class Booking{
     seat:Seat;
-    trip:Trip[]=[];
-    constructor(seat:Seat){
+    tripTo:Trip[]=[];
+    passenger:Passenger;
+    tripFrom?:Trip;
+   
+    constructor(public idBooking:string,passenger:Passenger, seat:Seat,tripFrom?: Trip){
+        this.idBooking = idBooking;
         this.seat = seat;
-       
+       this.tripFrom = tripFrom;
+       this.passenger = passenger;
     }
-    addTrip (trip:Trip) {
-        this.trip.push(trip);
+    addTripTo (trip:Trip) {
+        this.tripTo.push(trip);
     }
+    getAllTrip (){
+        return this.tripTo;
+    }
+    getTripTo(){
+        return this.tripTo;
+    }
+
 }
