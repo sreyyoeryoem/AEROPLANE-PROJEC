@@ -1,13 +1,12 @@
-import { Gate } from "./Gate";
 import { Airline } from "./Airoline/Airline";
 import { Booking } from "./Booking/Booking";
+import { Gate } from "./Gate";
 export class Airport{
     private gates: Gate[] = [];
     private airlines:Airline[]=[];
     private bookings:Booking[]=[];
     constructor(private name: string){
-        this.name = name;
-        
+        this.name = name;  
     }
     addGate(gate: Gate){
         this.gates.push(gate);

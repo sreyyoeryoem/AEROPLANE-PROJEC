@@ -12,15 +12,17 @@ export class Booking{
         this.seat = seat;
        this.tripFrom = tripFrom;
        this.passenger = passenger;
+
     }
     addTripTo (trip:Trip) {
         this.tripTo.push(trip);
     }
-    getAllTrip (){
-        return this.tripTo;
-    }
+
     getTripTo(){
         return this.tripTo;
     }
 
 }
+
+
+

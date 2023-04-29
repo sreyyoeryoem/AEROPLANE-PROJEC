@@ -117,9 +117,11 @@ aeroplane1.addpassenger(singdav);
 let pilot1 = new Pilot("kaven",32,"20/10/1033",200,Gender.male)
 let chef1 = new Chef("sreykav",25,"20/10/199",400,Gender.famale)
 let daggage_handler = new Daggage_handler("papa",32,"20/10/1033",700,Gender.male)
+let attendant = new Attendant("yaya",32,"20/10/1033",400,Gender.famale)
 airlineCompany1.addEmployee(pilot1)
 airlineCompany1.addEmployee(chef1)
 airlineCompany1.addEmployee(daggage_handler)
+airlineCompany1.addEmployee(attendant)
 
 
 // console.log(sreyyoer.bookings)
@@ -131,4 +133,4 @@ airport.getPassengersReturnTicket()
 //User3 As an airline pilot, I want to know, for a given date, how many flights I have to join.
 //User5 As an airline manager, I want to find out how much salary I pay all my employees
 airlineCompany1.getSalaryOfEmployees()
-console.log()
+console.log(airport.getFlightsPassenger("A1"))
