@@ -46,7 +46,6 @@ export class Airport{
 
     getPassengersReturnTicket(){
         let passengerRetounTicket = [];
-    
         for(let airline of this.getAllAirlines()){
             for(let aeroplan of airline.getAllAeroplanes()){
                 for (let passenger of aeroplan.getAllPassengers()){       
@@ -62,3 +61,5 @@ export class Airport{
         }
     }
 }
+
+

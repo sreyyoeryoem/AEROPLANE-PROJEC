@@ -2,9 +2,6 @@ import { Pilot } from "./Employee/Pilot";
 import { Flight } from "./Flight";
 import { Layout } from "../Booking/Layout";
 import { Passenger } from "../Booking/Passenger";
-import { Employee } from "./Employee/Employee";
-import { Meal } from "./Meal";
-
 export class Aeroplan{
     private pilots: Pilot[]=[];
     private flights:Flight[]=[];
@@ -27,6 +24,7 @@ export class Aeroplan{
     getflight(){
         return this.flights;
     }
+ 
     addpilot(pilot:Pilot){
         this.pilots.push(pilot);
     }

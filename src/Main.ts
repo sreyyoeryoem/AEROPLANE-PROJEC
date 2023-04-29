@@ -13,7 +13,6 @@ import { Attendant } from './Airoline/Employee/Attendant';
 import { Chef } from './Airoline/Employee/chef';
 import { Daggage_handler } from './Airoline/Employee/Daggage_handler';
 import { Gender } from './Airoline/Employee/Gender';
-
 import { Meal } from './Airoline/Meal';
 import { Bag } from './Booking/Bag';
 import { Date } from './Airoline/Date';
@@ -41,14 +40,16 @@ let date2 = new Date(2023,1,12,"12:30:00");
 let date3 = new Date(2023,1,12,"12:30:00");
 
 let sreyyoertripTo = new Trip ("Cambodia","UK");
+let gate1 = new Gate('A01');
+let gate2 = new Gate('A02');
 
 
-let flight1 = new Flight ("AP43","Cabodiar","singapor",date1)
-let flight2 = new Flight ("AP44","singapr","Uk",date2)
-let flight3 = new Flight ("AP45","Cabodiar","singapor",date1)
-let flight4 = new Flight ("AP46","singapr","USA",date3)
-let flight5 = new Flight ("AP47","Cabodiar","singapor",date3)
-let flight6 = new Flight ("AP48","singapr","France",date3)
+let flight1 = new Flight ("AP43","Cabodiar","singapor",date1,gate1);
+let flight2 = new Flight ("AP44","singapr","Uk",date2,gate2);
+let flight3 = new Flight ("AP45","Cabodiar","singapor",date3,gate1);
+let flight4 = new Flight ("AP46","singapr","USA",date3,gate2);
+let flight5 = new Flight ("AP47","Cabodiar","singapor",date3,gate1);
+let flight6 = new Flight ("AP48","singapr","France",date3,gate2);
 
 
 let sreyyoertripFrom = new Trip ("UK","Cambodia");
@@ -86,8 +87,6 @@ singdav.addBooking(singdavBooking)
 
 // ======================================Airport=================
 let airport = new Airport("A3P89")
-let gate1 = new Gate ("A01")
-let gate2 = new Gate ("A02")
 
 airport.addGate(gate1)
 airport.addGate(gate2)
@@ -142,13 +141,13 @@ airlineCompany1.addEmployee(attendant)
 airport.getFlightsPassenger("A1")
 // User2 As an airline manager, I want to know for a given flight, how many passengers have return tickets.
 airport.getPassengersReturnTicket()
-//User3 As an airline pilot, I want to know, for a given date, how many flights I have to join.
+//User3 As an airline pilot, I want to know, for a given date, how many flights I have to join. 
 airlineCompany1.getFlights(pilot1,date2)
 //User4 As an airline chef, I need to know, for a given flight, how many of each meal type I need to prepare
 aeroplane1.getMealFromFlights(flight1)
-
 //User5 As an airline manager, I want to find out how much salary I pay all my employees
 airlineCompany1.getSalaryOfEmployees()
 // User 6 As a passenger, I want to know which gate my plane is waiting at.
+sreyyoer.getGateNumber('AP43',date1);
 
-console.log(airlineCompany1.getFlights(pilot1,date1))
+console.log(sreyyoer.getGateNumber('AP44',date2))
