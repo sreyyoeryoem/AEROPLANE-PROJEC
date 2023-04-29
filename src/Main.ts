@@ -6,7 +6,7 @@ import { Trip } from './Booking/Trip';
 import { Seat } from './Booking/seat';
 import { Booking } from './Booking/Booking';
 import { Airline } from './Airoline/Airline';
-import { Aeroplane } from './Airoline/Aeroplane';
+import { Aeroplan } from './Airoline/Aeroplane';
 import { Layout } from './Booking/Layout';
 import { Pilot } from './Airoline/Employee/Pilot';
 import { Attendant } from './Airoline/Employee/Attendant';
@@ -99,10 +99,10 @@ let layout1 = new Layout("50m","100m")
 layout1.addSeate(seatA1)
 layout1.addSeate(seatA2)
 
-let aeroplane1 = new Aeroplane ("OH-LWP","Airbys A320 family",layout1)
-let aeroplane2 = new Aeroplane ("OH-LWP","Airbys A320 family",layout1)
-airlineCompany1.addAeroplane(aeroplane1)
-airlineCompany1.addAeroplane(aeroplane2)
+let aeroplane1 = new Aeroplan ("OH-LWP","Airbys A320 family",layout1)
+let aeroplane2 = new Aeroplan ("OH-LWP","Airbys A320 family",layout1)
+airlineCompany1.addAeroplan(aeroplane1)
+airlineCompany1.addAeroplan(aeroplane2)
 
 aeroplane1.addFlight(flight1)
 aeroplane1.addFlight(flight2)
@@ -129,7 +129,6 @@ airport.getFlightsPassenger("A1")
 // User2 As an airline manager, I want to know for a given flight, how many passengers have return tickets.
 airport.getPassengersReturnTicket()
 //User3 As an airline pilot, I want to know, for a given date, how many flights I have to join.
-
 //User5 As an airline manager, I want to find out how much salary I pay all my employees
 airlineCompany1.getSalaryOfEmployees()
 console.log()

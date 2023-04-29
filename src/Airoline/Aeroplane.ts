@@ -4,7 +4,7 @@ import { Layout } from "../Booking/Layout";
 import { Passenger } from "../Booking/Passenger";
 
 
-export class Aeroplane{
+export class Aeroplan{
     private employee: Pilot[]=[];
     private flights:Flight[]=[];
     private layout:Layout; 
