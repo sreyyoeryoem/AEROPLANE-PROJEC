@@ -27,17 +27,34 @@ export class Aeroplan{
     getflight(){
         return this.flights;
     }
-    getMealFromFlights(flightNumber:string){
-      
-        for(let flight of this.flights){
-            if(flightNumber === flight["flight_number"] ){
-                // console.log(flight["meal"])
-                // return flight["meal"];
+    getFlightOfpassenger(){
+        let flightofpassenger = [];
+        for(let passenger of this.passengers){
+            for(let booking of passenger.getBooking()){
+                for(let trip of booking.getTripTo()){
+                    for (let flight of trip.getFlight()){
+                        flightofpassenger.push(flight);
+                    }
+                }
             }
-            
         }
-    }
+        return flightofpassenger
 
-    
-  
+    }
+    getMealFromFlights(fligh:Flight){
+      let resultMeals = [];
+        for(let passenger of this.passengers){
+            for(let booking of passenger.getBooking()){
+                for(let trip of booking.getTripTo()){
+                    for (let flight of trip.getFlight()){
+                       if(fligh["flight_number"] == flight["flight_number"]){        
+                            resultMeals.push(booking.meal);                          
+                       }
+                    }
+                }
+            }
+        }
+        return resultMeals
+    }
 }
+

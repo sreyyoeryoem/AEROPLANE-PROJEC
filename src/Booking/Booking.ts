@@ -7,13 +7,14 @@ export class Booking{
     tripTo:Trip[]=[];
     passenger:Passenger;
     tripFrom?:Trip;
-    meal:Meal[]=[]
-    constructor(public idBooking:string,passenger:Passenger, seat:Seat,tripFrom?: Trip){
+    
+    constructor(public idBooking:string,passenger:Passenger, public meal:Meal, seat:Seat,tripFrom?: Trip){
         this.idBooking = idBooking;
         this.seat = seat;
-       this.tripFrom = tripFrom;
-       this.passenger = passenger;
-
+        this.tripFrom = tripFrom;
+        this.passenger = passenger;
+        this.meal = meal;
+       
     }
     addTripTo (trip:Trip) {
         this.tripTo.push(trip);
@@ -22,10 +23,6 @@ export class Booking{
     getTripTo(){
         return this.tripTo;
     }
-    addMeal(meal:Meal){
-        this.meal.push(meal)
-    }
-
 }
 
 

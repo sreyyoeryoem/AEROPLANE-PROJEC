@@ -31,7 +31,7 @@ let thanabag1 = new Bag ("B01")
 let singdavbag1 = new Bag ("B01") 
 
 let sreyyoer = new Passenger ("sreyyoer","Yoem",19,976388651);
-let thana = new Passenger ("thana","choun",19,976388651);
+let thana = new Passenger ("thana","chhoeun",19,976388651);
 let singdav = new Passenger ("singdav","Thoun",19,976388651);
 
 sreyyoer.addBag(sreyyeorbag1)
@@ -65,7 +65,7 @@ sreyyoertripFrom.addFlight(flight2);
 sreyyoertripFrom.addFlight(flight1);
 
 let ThanaTripTo = new Trip ("Cambodia","USA");
-ThanaTripTo.addFlight(flight3);
+ThanaTripTo.addFlight(flight1);
 ThanaTripTo.addFlight(flight4);
 
 let singdavTripTo = new Trip ("Cambodia","France");
@@ -75,9 +75,9 @@ singdavTripTo.addFlight(flight6);
 
 // =============booking ========================================================
 
-let sreyyoerBooking = new Booking ("A1",sreyyoer,seatA1,sreyyoertripFrom)
-let thanaBooking = new Booking ("A2",thana,seatA2)
-let singdavBooking = new Booking ("A3",singdav,seatA3)
+let sreyyoerBooking = new Booking ("A1",sreyyoer,Meal.DAIRY_FREE,seatA1,sreyyoertripFrom)
+let thanaBooking = new Booking ("A2",thana,Meal.HALAL,seatA2)
+let singdavBooking = new Booking ("A3",singdav,Meal.VEGETARIAN,seatA3)
 
 
 sreyyoerBooking.addTripTo(sreyyoertripTo);
@@ -146,10 +146,10 @@ airport.getPassengersReturnTicket()
 //User3 As an airline pilot, I want to know, for a given date, how many flights I have to join.
 
 //User4 As an airline chef, I need to know, for a given flight, how many of each meal type I need to prepare
-// aeroplane1.getMealFromFlights()
+aeroplane1.getMealFromFlights(flight1)
 
 //User5 As an airline manager, I want to find out how much salary I pay all my employees
 airlineCompany1.getSalaryOfEmployees()
 // User 6 As a passenger, I want to know which gate my plane is waiting at.
-// .getGateNumber()
-// console.log(aeroplane1.)
+
+console.log(aeroplane1.getMealFromFlights(flight1))
