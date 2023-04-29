@@ -19,5 +19,8 @@ export class Passenger{
     addBag(bags:Bag){
         this.bags.push(bags);
     }
+    getGateNumber(flightNumber:string,date:Date){
+        
+    }
     
 }
