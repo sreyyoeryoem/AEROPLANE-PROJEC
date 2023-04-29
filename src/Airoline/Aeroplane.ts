@@ -45,7 +45,6 @@ export class Aeroplan{
             }
         }
         return flightofpassenger
-
     }
     getMealFromFlights(fligh:Flight){
         let resultMeals = [];
@@ -61,7 +60,6 @@ export class Aeroplan{
               }
           }
           return resultMeals
-      }
-      
+      } 
 }
 
