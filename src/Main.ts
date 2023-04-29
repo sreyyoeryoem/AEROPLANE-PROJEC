@@ -36,20 +36,17 @@ sreyyoer.addBag(sreyyeorbag2)
 thana.addBag(thanabag1)
 singdav.addBag(singdavbag1)
 
-let date1 = new Date("12","01","2021","12:30:00");
-let date2 = new Date("12","01","2021","12:30:00");
-let date3 = new Date("13","01","2021","12:30:00");
+let date1 = new Date(2023,2,12,"12:30:00");
+let date2 = new Date(2023,1,12,"12:30:00");
+let date3 = new Date(2023,1,12,"12:30:00");
 
 let sreyyoertripTo = new Trip ("Cambodia","UK");
 
 
 let flight1 = new Flight ("AP43","Cabodiar","singapor",date1)
-
 let flight2 = new Flight ("AP44","singapr","Uk",date2)
-
-let flight3 = new Flight ("AP45","Cabodiar","singapor",date3)
+let flight3 = new Flight ("AP45","Cabodiar","singapor",date1)
 let flight4 = new Flight ("AP46","singapr","USA",date3)
-
 let flight5 = new Flight ("AP47","Cabodiar","singapor",date3)
 let flight6 = new Flight ("AP48","singapr","France",date3)
 
@@ -116,7 +113,7 @@ airlineCompany1.addAeroplan(aeroplane2)
 
 aeroplane1.addFlight(flight1)
 aeroplane1.addFlight(flight2)
-// aeroplane1.addFlight(flight2)
+aeroplane1.addFlight(flight3)
 
 aeroplane1.addpassenger(sreyyoer);
 aeroplane1.addpassenger(thana);
@@ -146,7 +143,7 @@ airport.getFlightsPassenger("A1")
 // User2 As an airline manager, I want to know for a given flight, how many passengers have return tickets.
 airport.getPassengersReturnTicket()
 //User3 As an airline pilot, I want to know, for a given date, how many flights I have to join.
-airlineCompany1.getFlights(pilot1,date1)
+airlineCompany1.getFlights(pilot1,date2)
 //User4 As an airline chef, I need to know, for a given flight, how many of each meal type I need to prepare
 aeroplane1.getMealFromFlights(flight1)
 
@@ -154,4 +151,4 @@ aeroplane1.getMealFromFlights(flight1)
 airlineCompany1.getSalaryOfEmployees()
 // User 6 As a passenger, I want to know which gate my plane is waiting at.
 
-// console.log()
+console.log(airlineCompany1.getFlights(pilot1,date1))

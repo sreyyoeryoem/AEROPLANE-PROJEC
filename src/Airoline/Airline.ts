@@ -31,11 +31,21 @@ export class Airline{
         return resultSalary
 
     }
-    getFlights(pilot:Pilot,date:Date){
+    getFlights(pilotfrome:Pilot,date:Date){
+        let countOfFlights = 0 ;
         for(let aeroplan of this.aeroplanes){
-            // if(pilot["name"] == aeroplan )
-            
-            console.log(aeroplan["pilots"][0]["name"])
+            // console.log(aeroplan)
+            for(let pilot of aeroplan.getpilot()){
+                if(pilot["name"] == pilotfrome["name"]){
+                    for(let flight of aeroplan["flights"]){
+                        if(flight["date"].isEqual(date)){
+                            countOfFlights += 1;
+                        }
+                    }
+                }
+
+            }
         }
+        return countOfFlights
     }
 }
